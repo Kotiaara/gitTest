@@ -1,0 +1,16 @@
+#-------------------
+# Ara
+#-------------------
+name: mysecondtest
+
+on:
+  push:
+    branches: 
+      - master
+jobs:
+  mytest:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Hello
+        run: echo "Hello World"
