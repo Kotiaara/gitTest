@@ -4,15 +4,16 @@ name: test2
 
 on:
   push:
+
   
 jobs:
-  test-job:
-   runs-on: ubuntu-latest
-   steps:
-   - uses:  actions/checkout@v3
-     with:
-      ref: ${{  github.event.pull_request.head.sha }}
- 
-   - id: github
-   - name: Print test2  
-     run: echo ${{  github.event.pull_request.head.sha }}
+ runs-on: ubuntu-latest
+    output:
+   output1: ${{ steps.step1.outputs.test }}
+   output2: ${{ steps.step2.outputs.test }}
+   
+   steps: 
+     - id: step1
+      run: echo "test=hello" >> $GITHUB_OUTPUT
+      name: Print Hello
+      run: echo ${{ steps.step1.outputs.test}}
