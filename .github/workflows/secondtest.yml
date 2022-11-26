@@ -13,5 +13,6 @@ jobs:
      with:
       ref: ${{  github.event.pull_request.head.sha }}
  
-   - name: test2  
-     run: echo "Test2"
+   - id: github
+   - name: Print test2  
+     run: echo ${{  github.event.pull_request.head.sha }}
