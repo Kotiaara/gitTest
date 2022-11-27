@@ -6,7 +6,6 @@ on:
 jobs:
  if-windows-else:
     runs-on: ubuntu-latest
-
     steps:
 
       - name: condition 1
